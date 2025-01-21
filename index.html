@@ -3,26 +3,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Access Phone Camera</title>
+    <title>Video Call Template</title>
     <style>
       body {
         margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+        font-family: Arial, sans-serif;
         background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
       }
-      #camera {
+
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+        flex-grow: 1;
+        padding: 10px;
+      }
+
+      video,
+      .video-container {
         width: 100%;
-        max-width: 600px;
+        height: 100%;
         border: 2px solid #333;
         border-radius: 10px;
+        object-fit: cover;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #fff;
+        border-top: 1px solid #ccc;
+      }
+
+      .button {
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .settings {
+        background-color: #ddd;
+      }
+
+      .screenshot {
+        background-color: #007bff;
+        color: white;
+      }
+
+      .exit {
+        background-color: #ff3b30;
+        color: white;
       }
     </style>
   </head>
   <body>
-    <video id="camera" autoplay playsinline></video>
+    <div class="video-grid">
+      <video id="camera" autoplay playsinline muted></video>
+      <div class="video-container">
+        <video
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          autoplay
+          loop
+          muted
+        ></video>
+      </div>
+      <div class="video-container">
+        <video
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          autoplay
+          loop
+          muted
+        ></video>
+      </div>
+      <div class="video-container">
+        <video
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          autoplay
+          loop
+          muted
+        ></video>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="button settings">&#x22EE;</button>
+      <button class="button screenshot">Take Screenshot</button>
+      <button class="button exit">Exit</button>
+    </div>
 
     <script>
       async function accessCamera() {
@@ -31,8 +106,8 @@
 
           // Request access to the camera
           const stream = await navigator.mediaDevices.getUserMedia({
-            video: true, // Enable video
-            audio: false, // Disable audio
+            video: true,
+            audio: false,
           });
 
           // Stream the video to the video element
@@ -43,7 +118,31 @@
         }
       }
 
-      // Start accessing the camera when the page loads
+      function takeScreenshot() {
+        const video = document.getElementById("camera");
+        const canvas = document.createElement("canvas");
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        const context = canvas.getContext("2d");
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        // Convert canvas to a downloadable image
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "screenshot.png";
+        link.click();
+      }
+
+      document
+        .querySelector(".screenshot")
+        .addEventListener("click", takeScreenshot);
+      document.querySelector(".exit").addEventListener("click", () => {
+        if (confirm("Are you sure you want to exit the call?")) {
+          window.close();
+        }
+      });
+
+      // Start accessing the camera
       window.addEventListener("load", accessCamera);
     </script>
   </body>
