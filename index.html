@@ -3,147 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Video Call Template</title>
+    <title>Document</title>
     <style>
       body {
         margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        padding: 0;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         height: 100vh;
+        background-color: #f0f0f0;
       }
 
-      .video-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 10px;
-        flex-grow: 1;
-        padding: 10px;
+      .iphone-screen {
+        width: 430px;
+        height: 932px;
+        background-image: url("./assets/phonescreen.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #000;
+        border-radius: 50px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
       }
 
-      video,
-      .video-container {
-        width: 100%;
-        height: 100%;
-        border: 2px solid #333;
+      .notch {
+        width: 250px;
+        height: 30px;
+        background-color: #333;
+        border-radius: 15px;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .notification {
+        width: 90%;
+        background-color: white;
         border-radius: 10px;
-        object-fit: cover;
+        position: absolute;
+        top: -100px;
+        left: 5%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        transition: top 0.5s ease;
       }
 
-      .controls {
+      .notification.show {
+        top: 50px;
+      }
+
+      .notification-label {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .button-container {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        background-color: #fff;
-        border-top: 1px solid #ccc;
+        gap: 10px;
       }
 
-      .button {
+      .btn {
+        flex: 1;
+        padding: 10px;
         border: none;
-        padding: 10px 20px;
-        font-size: 16px;
         border-radius: 5px;
         cursor: pointer;
-      }
-
-      .settings {
-        background-color: #ddd;
-      }
-
-      .screenshot {
-        background-color: #007bff;
+        font-size: 16px;
+        font-weight: bold;
         color: white;
       }
 
-      .exit {
-        background-color: #ff3b30;
-        color: white;
+      .btn-answer {
+        background-color: #4caf50;
+      }
+
+      .btn-decline {
+        background-color: #f44336;
       }
     </style>
   </head>
   <body>
-    <div class="video-grid">
-      <video id="camera" autoplay playsinline muted></video>
-      <div class="video-container">
-        <video
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
-          autoplay
-          loop
-          muted
-        ></video>
-      </div>
-      <div class="video-container">
-        <video
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
-          autoplay
-          loop
-          muted
-        ></video>
-      </div>
-      <div class="video-container">
-        <video
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
-          autoplay
-          loop
-          muted
-        ></video>
+    <div class="iphone-screen">
+      <div class="notch"></div>
+      <div class="notification" id="notification">
+        <div class="notification-label">Family</div>
+        <div class="button-container">
+          <button class="btn btn-answer" id="answer">Answer</button>
+          <button class="btn btn-decline" id="decline">Decline</button>
+        </div>
       </div>
     </div>
+  </body>
+  <audio id="ringtone" src"./assets/ringtone.mp3" loop></audio>
 
-    <div class="controls">
-      <button class="button settings">&#x22EE;</button>
-      <button class="button screenshot">Take Screenshot</button>
-      <button class="button exit">Exit</button>
-    </div>
+  <script>
+    window.addEventListener("load", () => {
+      const notification = document.getElementById("notification");
+      const ringtone = document.getElementById("ringtone");
+      const answerButton = document.getElementById("answer");
+      const declineButton = document.getElementById("decline");
 
-    <script>
-      async function accessCamera() {
-        try {
-          const videoElement = document.getElementById("camera");
+      const delay = Math.floor(Math.random() * (7000 - 3000 + 1)) + 3000;
 
-          // Request access to the camera
-          const stream = await navigator.mediaDevices.getUserMedia({
-            video: true,
-            audio: false,
-          });
+      setTimeout(() => {
+        notification.classList.add("show");
+        ringtone.play();
+      }, delay);
 
-          // Stream the video to the video element
-          videoElement.srcObject = stream;
-        } catch (error) {
-          console.error("Error accessing the camera:", error);
-          alert("Unable to access the camera. Please check your permissions.");
-        }
-      }
+      const stopRingtone = () => {
+        ringtone.pause();
+        ringtone.currentTime = 0;
+      };
 
-      function takeScreenshot() {
-        const video = document.getElementById("camera");
-        const canvas = document.createElement("canvas");
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        const context = canvas.getContext("2d");
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-        // Convert canvas to a downloadable image
-        const link = document.createElement("a");
-        link.href = canvas.toDataURL("image/png");
-        link.download = "screenshot.png";
-        link.click();
-      }
-
-      document
-        .querySelector(".screenshot")
-        .addEventListener("click", takeScreenshot);
-      document.querySelector(".exit").addEventListener("click", () => {
-        if (confirm("Are you sure you want to exit the call?")) {
-          window.close();
-        }
+      answerButton.addEventListener("click", () => {
+        stopRingtone();
+        alert("Call Answered");
       });
 
-      // Start accessing the camera
-      window.addEventListener("load", accessCamera);
-    </script>
-  </body>
+      declineButton.addEventListener("click", () => {
+        stopRingtone();
+        alert("Call Declined");
+      });
+    });
+  </script>
 </html>
