@@ -4,8 +4,323 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(
+          126.08% 186.45% at 122.65% -7.98%,
+          #e8d6cb 16%,
+          #847776 56.5%,
+          #8c7e7d 89%,
+          #2b222b 100%
+        );
+      }
+      #iphonescreen {
+        width: 430px;
+        height: 840px;
+        border-radius: 50px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+      }
+      h3 {
+        display: inline;
+        color: #e8d6cb;
+        text-align: center;
+        text-shadow: 0px 0px 13px rgba(0, 0, 0, 0.25);
+        font-family: Inter;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        margin: 0;
+      }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      #middle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .avatarCircle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #e8d6cb;
+        margin: 10px;
+      }
+    </style>
   </head>
   <body>
-    <div></div>
+    <div id="iphonescreen">
+      <div id="container">
+        <div id="top">
+          <div class="avatarCircle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="120"
+              height="120"
+              viewBox="0 0 120 120"
+              fill="none"
+            >
+              <g filter="url(#filter0_d_13_162)">
+                <circle cx="60" cy="60" r="40" fill="#2B222B" />
+                <circle
+                  cx="60"
+                  cy="60"
+                  r="40"
+                  fill="black"
+                  fill-opacity="0.35"
+                />
+                <circle
+                  cx="60"
+                  cy="60"
+                  r="44"
+                  stroke="#E8D6CB"
+                  stroke-width="8"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_d_13_162"
+                  x="0.5"
+                  y="0.5"
+                  width="119"
+                  height="119"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feMorphology
+                    radius="3.5"
+                    operator="dilate"
+                    in="SourceAlpha"
+                    result="effect1_dropShadow_13_162"
+                  />
+                  <feOffset />
+                  <feGaussianBlur stdDeviation="4" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_13_162"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_13_162"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+          </div>
+          <div class="avatarCircle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="120"
+              height="120"
+              viewBox="0 0 120 120"
+              fill="none"
+            >
+              <g filter="url(#filter0_d_13_162)">
+                <circle cx="60" cy="60" r="40" fill="#2B222B" />
+                <circle
+                  cx="60"
+                  cy="60"
+                  r="40"
+                  fill="black"
+                  fill-opacity="0.35"
+                />
+                <circle
+                  cx="60"
+                  cy="60"
+                  r="44"
+                  stroke="#E8D6CB"
+                  stroke-width="8"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_d_13_162"
+                  x="0.5"
+                  y="0.5"
+                  width="119"
+                  height="119"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feMorphology
+                    radius="3.5"
+                    operator="dilate"
+                    in="SourceAlpha"
+                    result="effect1_dropShadow_13_162"
+                  />
+                  <feOffset />
+                  <feGaussianBlur stdDeviation="4" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_13_162"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_13_162"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+          </div>
+          <div class="avatarCircle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="120"
+              height="120"
+              viewBox="0 0 120 120"
+              fill="none"
+            >
+              <g filter="url(#filter0_d_13_162)">
+                <circle cx="60" cy="60" r="40" fill="#2B222B" />
+                <circle
+                  cx="60"
+                  cy="60"
+                  r="40"
+                  fill="black"
+                  fill-opacity="0.35"
+                />
+                <circle
+                  cx="60"
+                  cy="60"
+                  r="44"
+                  stroke="#E8D6CB"
+                  stroke-width="8"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_d_13_162"
+                  x="0.5"
+                  y="0.5"
+                  width="119"
+                  height="119"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feMorphology
+                    radius="3.5"
+                    operator="dilate"
+                    in="SourceAlpha"
+                    result="effect1_dropShadow_13_162"
+                  />
+                  <feOffset />
+                  <feGaussianBlur stdDeviation="4" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_13_162"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_13_162"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div id="middle">
+          <h3>Waiting...</h3>
+          <div id="timer">
+            <h3 class="timerElementMin">00</h3>
+            <h3>:</h3>
+            <h3 class="timerElementSec">00</h3>
+          </div>
+        </div>
+        <div id="bot"></div>
+      </div>
+    </div>
   </body>
+
+  <script>
+    const timerElement = document.getElementById("bot");
+    const timerElementMin = document.querySelector(".timerElementMin");
+    const timerElementSec = document.querySelector(".timerElementSec");
+
+    let time = 0;
+    let interval;
+    const timeCountdownInMinutes = 1;
+
+    //    countdown timer from timeCountdownInMinutes to 0
+    function startTimer() {
+      time = timeCountdownInMinutes * 60;
+      interval = setInterval(() => {
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+
+        timerElementMin.textContent = minutes < 10 ? `0${minutes}` : minutes;
+        timerElementSec.textContent = seconds < 10 ? `0${seconds}` : seconds;
+
+        time--;
+
+        if (time < 0) {
+          clearInterval(interval);
+          alert("timers up");
+        }
+      }, 1000);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      startTimer();
+    });
+  </script>
 </html>
