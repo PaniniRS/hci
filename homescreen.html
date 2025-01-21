@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      .iphone-screen {
+        width: 430px;
+        height: 932px;
+        background-image: url("./assets/phonescreen.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #000;
+        border-radius: 50px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .notch {
+        width: 250px;
+        height: 30px;
+        background-color: #333;
+        border-radius: 15px;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .notification {
+        width: 90%;
+        background-color: white;
+        border-radius: 10px;
+        position: absolute;
+        top: -100px;
+        left: 5%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        transition: top 0.5s ease;
+      }
+
+      .notification.show {
+        top: 50px;
+      }
+
+      .notification-label {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .btn {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+      }
+
+      .btn-answer {
+        background-color: #4caf50;
+      }
+
+      .btn-decline {
+        background-color: #f44336;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="iphone-screen">
+      <div class="notch"></div>
+      <div class="notification" id="notification">
+        <div class="notification-label">Family</div>
+        <div class="button-container">
+          <button class="btn btn-answer" id="answer">Answer</button>
+          <button class="btn btn-decline" id="decline">Decline</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <audio id="ringtone" src="./ringtone.mp3" loop></audio>
+
+  <script>
+    window.addEventListener("load", () => {
+      const notification = document.getElementById("notification");
+      const ringtone = document.getElementById("ringtone");
+      const answerButton = document.getElementById("answer");
+      const declineButton = document.getElementById("decline");
+
+      const delay = Math.floor(Math.random() * (7000 - 3000 + 1)) + 3000;
+
+      setTimeout(() => {
+        notification.classList.add("show");
+        ringtone.play();
+      }, delay);
+
+      const stopRingtone = () => {
+        ringtone.pause();
+        ringtone.currentTime = 0;
+      };
+
+      answerButton.addEventListener("click", () => {
+        stopRingtone();
+        alert("Call Answered");
+      });
+
+      declineButton.addEventListener("click", () => {
+        stopRingtone();
+        alert("Call Declined");
+      });
+    });
+  </script>
+</html>
