@@ -751,11 +751,11 @@
 
     let time = 0;
     let interval;
-    const timeCountdownInMinutes = 1;
+    const timeCountdownInMinutes = 20;
 
     //    countdown timer from timeCountdownInMinutes to 0
     function startTimer() {
-      time = timeCountdownInMinutes * 60;
+      time = timeCountdownInMinutes;
       interval = setInterval(() => {
         const minutes = Math.floor(time / 60);
         const seconds = time % 60;
