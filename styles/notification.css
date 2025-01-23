@@ -1,14 +1,13 @@
 .notification {
   width: 80%;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 14px;
   position: absolute;
   top: -200px;
   left: 5%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 20px;
-  font-family: "Gill Sans", sans-serif;
   transition: top 0.5s ease;
 
   display: flex;
@@ -25,6 +24,7 @@
 
 .notification-label {
   font-size: 16px;
+  color: white;
   font-weight: bold;
   margin: 0px 2px 0px 2px;
 }
