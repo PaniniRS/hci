@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>OnlyFam</title>
+    <link rel="stylesheet" href="./styles/iphone.css" />
     <style>
+<<<<<<< HEAD
       body {
         overflow: hidden;
         margin: 0;
@@ -28,6 +30,8 @@
           #2b222b 100%
         );
       }
+=======
+>>>>>>> 08131bd (seperated css)
       h3 {
         display: inline;
         color: #e8d6cb;
@@ -57,7 +61,8 @@
     </style>
   </head>
   <body>
-    <div id="iphonescreen">
+    <div class="iphone-screen BG_GRADIENT">
+      <div class="notch"></div>
       <div id="container">
         <div id="top">
           <div
@@ -589,7 +594,7 @@
           </div>
           <div
             class="avatarCircle"
-            style="position: fixed; top: 543px; left: 16px"
+            style="position: fixed; top: 50%; left: 16px"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -751,11 +756,11 @@
 
     let time = 0;
     let interval;
-    const timeCountdownInMinutes = 20;
+    const timeCountdownInSeconds = 600;
 
     //    countdown timer from timeCountdownInMinutes to 0
     function startTimer() {
-      time = timeCountdownInMinutes;
+      time = timeCountdownInSeconds;
       interval = setInterval(() => {
         const minutes = Math.floor(time / 60);
         const seconds = time % 60;

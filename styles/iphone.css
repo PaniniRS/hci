@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.iphone-screen {
+  width: 393px;
+  height: 852px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.BG {
+  background-image: url("../assets/phonescreen.jpeg");
+  background-repeat: no-repeat;
+  /* background-color: #000; */
+}
+
+.BG_GRADIENT {
+  background: radial-gradient(
+    150.08% 186.45% at 122.65% -7.98%,
+    #b8aba3 30%,
+    #786a69 100.5%,
+    #716665 89%,
+    #2b222b 100%
+  );
+}
+
+.notch {
+  width: 180px;
+  height: 30px;
+  background-color: #000000;
+  border-radius: 15px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
