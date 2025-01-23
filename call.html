@@ -4,16 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Video Call Template</title>
+    <link rel="stylesheet" href="styles/iphone.css" />
     <style>
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-      }
-
       .video-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -65,46 +57,47 @@
     </style>
   </head>
   <body>
-    <div class="video-grid">
-      <video
-        id="camera"
-        autoplay
-        playsinline
-        muted
-        style="transform: scaleX(-1)"
-      ></video>
-      <div class="video-container">
+    <div class="iphone-screen">
+      <div class="video-grid">
         <video
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          id="camera"
           autoplay
-          loop
+          playsinline
           muted
+          style="transform: scaleX(-1)"
         ></video>
+        <div class="video-container">
+          <video
+            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            autoplay
+            loop
+            muted
+          ></video>
+        </div>
+        <div class="video-container">
+          <video
+            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            autoplay
+            loop
+            muted
+          ></video>
+        </div>
+        <div class="video-container">
+          <video
+            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            autoplay
+            loop
+            muted
+          ></video>
+        </div>
       </div>
-      <div class="video-container">
-        <video
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
-          autoplay
-          loop
-          muted
-        ></video>
-      </div>
-      <div class="video-container">
-        <video
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
-          autoplay
-          loop
-          muted
-        ></video>
+
+      <div class="controls">
+        <button class="button settings">&#x22EE;</button>
+        <button class="button screenshot">Take Screenshot</button>
+        <button class="button exit">Exit</button>
       </div>
     </div>
-
-    <div class="controls">
-      <button class="button settings">&#x22EE;</button>
-      <button class="button screenshot">Take Screenshot</button>
-      <button class="button exit">Exit</button>
-    </div>
-
     <script>
       async function accessCamera() {
         try {
