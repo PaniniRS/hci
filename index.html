@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
     <title>Document</title>
     <style>
       body {
@@ -88,16 +89,27 @@
         background-color: #f44336;
       }
     </style>
+=======
+    <title>OnlyFam</title>
+    <link rel="stylesheet" href="./styles/iphone.css" />
+    <link rel="stylesheet" href="./styles/notification.css" />
+>>>>>>> ce03e1d (Changed notification style, fixed display scaling)
   </head>
   <body>
-    <div class="iphone-screen">
+    <div class="iphone-screen BG">
       <div class="notch"></div>
       <div class="notification" id="notification">
-        <div class="notification-label">Family</div>
-        <div class="button-container">
-          <button class="btn btn-answer" id="answer">Answer</button>
-          <button class="btn btn-decline" id="decline">Decline</button>
-        </div>
+        <div class="notification-icon"">
+        <img
+          src="./assets/Djungelskog Plush Toy Brown Bear.avif"
+          alt="Family"
+          style="width: 48px; height: 48px; border-radius: 16px"
+        />
+      </div>
+      <div class="notification-label">Family is calling!</div>
+      <div class="button-container">
+        <button class="btn btn-answer" id="answer">Answer</button>
+        <button class="btn btn-decline" id="decline">Decline</button>
       </div>
     </div>
   </body>

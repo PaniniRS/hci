@@ -1,0 +1,55 @@
+.notification {
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  position: absolute;
+  top: -200px;
+  left: 5%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  font-family: "Gill Sans", sans-serif;
+  transition: top 0.5s ease;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.notification.show {
+  top: 70px;
+}
+
+.notification-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0px 2px 0px 2px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.btn-answer {
+  background-color: #4caf50;
+}
+
+.btn-decline {
+  background-color: #f44336;
+}
