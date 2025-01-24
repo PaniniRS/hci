@@ -1,3 +1,6 @@
+// disable selection on document
+document.addEventListener("selectstart", (e) => e.preventDefault());
+
 const labelMinutes = document.getElementById("minutes");
 const labelSeconds = document.getElementById("seconds");
 

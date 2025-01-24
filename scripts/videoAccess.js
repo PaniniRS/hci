@@ -1,3 +1,6 @@
+// disable selection on document
+document.addEventListener("selectstart", (e) => e.preventDefault());
+
 async function accessCamera() {
   try {
     const videoElement = document.getElementById("camera");

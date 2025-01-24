@@ -6,6 +6,9 @@ const menuButtonPoke = document.querySelector("#pokeSettings");
 const menuButtonMoments = document.querySelector("#momentsSettings");
 const menuButtonSettings = document.querySelector("#menuSettings");
 
+// disable selection on document
+document.addEventListener("selectstart", (e) => e.preventDefault());
+
 const buttons = document.querySelectorAll(".button");
 let isMenuOpen = false;
 
