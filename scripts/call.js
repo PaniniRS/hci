@@ -32,7 +32,7 @@ exitButton.addEventListener("click", (e) => {
 screenshotButton.addEventListener("click", (e) => {
   clickButton(screenshotButton);
   screenshotAnimation();
-  captureVisiblePage();
+  screenshot();
 });
 
 menuButtonPoke.addEventListener("click", (e) => {
@@ -66,7 +66,7 @@ const clickButton = (button) => {
 };
 
 const screenshotAnimation = () => {
-  // add a white flash
+  // Create the flash element
   const flash = document.createElement("div");
   flash.style.position = "fixed";
   flash.style.top = "0";
@@ -74,59 +74,49 @@ const screenshotAnimation = () => {
   flash.style.width = "100vw";
   flash.style.height = "100vh";
   flash.style.backgroundColor = "white";
+  flash.style.opacity = "0"; // Start invisible
+  flash.style.transition = "opacity 0.1s ease-in, visibility 0s 0.3s"; // Fade-in and fade-out effect
   flash.style.zIndex = "9999";
 
+  // Append flash to the body
   document.body.appendChild(flash);
+
+  // Trigger the flash animation
+  requestAnimationFrame(() => {
+    flash.style.opacity = "1"; // Flash appears
+  });
+
+  // Remove flash after animation
   setTimeout(() => {
-    flash.remove();
-  }, 200);
+    flash.style.opacity = "0"; // Flash fades out
+    setTimeout(() => {
+      flash.remove(); // Cleanup DOM
+    }, 300); // Match transition delay
+  }, 100); // Keep flash visible momentarily
 };
 
 //////////////////////
 
-// TODO: FIX THIS
-function captureVisiblePage() {
-  // Create a canvas element to capture the visible part
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
-  const iphoneScreen = document.querySelector(".iphone-screen");
-  // Get dimensions of the visible area
-  const width = iphoneScreen.width;
-  const height = iphoneScreen.height;
-
-  // Set canvas size to match visible area
-  canvas.width = width;
-  canvas.height = height;
-
-  // Draw the visible page
-  // context.drawImage(document.body, 0, 0, width, height);
-  // Convert the canvas to a PNG image
-  canvas.toBlob((blob) => {
-    if (blob) {
+const captureArea = document.querySelector(".iphone-screen");
+function screenshot() {
+  html2canvas(captureArea)
+    .then((canvas) => {
+      // Create a link element
+      const link = document.createElement("a");
       const date = new Date();
-      const dateParsed = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}-${date.getHours()}:${date.getMinutes()}`;
-      saveImageToLocalStorage(blob, `OnlyFamMoment-${dateParsed}.png`);
-
-      // Now download the blob
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `OnlyFamMoment-${dateParsed}.png`;
-      a.click();
-      URL.revokeObjectURL(url);
-      a.remove();
-    } else {
-      console.error("Failed to create the image blob.");
-    }
-  });
-}
-
-function saveImageToLocalStorage(blob, fileName) {
-  const reader = new FileReader();
-  reader.onload = function (event) {
-    // Save image in localStorage as base64
-    localStorage.setItem(fileName, event.target.result);
-    console.log(`Image saved in localStorage with key: ${fileName}`);
-  };
-  reader.readAsDataURL(blob);
+      const formattedDate = `${String(date.getDate()).padStart(
+        2,
+        "0"
+      )}/${String(date.getMonth() + 1).padStart(2, "0")}/${String(
+        date.getFullYear()
+      ).slice(-2)}-${String(date.getHours()).padStart(2, "0")}:${String(
+        date.getMinutes()
+      ).padStart(2, "0")}`;
+      link.download = `OnlyFam_Moment${formattedDate}.png`; // Filename for the screenshot
+      link.href = canvas.toDataURL("image/png"); // Set image data as href
+      link.click(); // Trigger download
+    })
+    .catch((error) => {
+      console.error("Screenshot failed:", error);
+    });
 }
