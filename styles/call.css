@@ -4,7 +4,7 @@
   justify-content: space-evenly;
   align-content: center;
   flex-wrap: nowrap;
-  background-color: #333;
+  background-color: #606060;
 }
 
 .cameraTopLeftRounded {
@@ -23,7 +23,7 @@
 .video-grid {
   display: grid;
   margin-top: 8px;
-  background-color: #333;
+  background-color: #606060;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   flex-grow: 1;
@@ -42,7 +42,7 @@ video,
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
-  background-color: #ffffffd2;
+  background-color: #e8d6cb;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   padding-bottom: 12px;
   padding-left: 8px;
