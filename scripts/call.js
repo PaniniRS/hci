@@ -26,6 +26,7 @@ menuButton.addEventListener("click", (e) => {
 
 exitButton.addEventListener("click", (e) => {
   clickButton(exitButton);
+  window.location.href = "../index.html";
 });
 
 screenshotButton.addEventListener("click", (e) => {
@@ -33,6 +34,22 @@ screenshotButton.addEventListener("click", (e) => {
   screenshotAnimation();
   captureVisiblePage();
 });
+
+menuButtonPoke.addEventListener("click", (e) => {
+  clickButton(menuButtonPoke);
+});
+
+menuButtonMoments.addEventListener("click", (e) => {
+  clickButton(menuButtonMoments);
+  window.location.href = "../moments.html";
+});
+
+menuButtonSettings.addEventListener("click", (e) => {
+  clickButton(menuButtonSettings);
+  window.location.href = "../settings.html";
+});
+
+//////////////////
 
 const clickButton = (button) => {
   button.animate(
@@ -42,7 +59,7 @@ const clickButton = (button) => {
       { transform: "scale(1)" },
     ],
     {
-      duration: 300,
+      duration: 180,
       iterations: 1,
     }
   );
