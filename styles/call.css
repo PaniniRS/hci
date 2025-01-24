@@ -1,0 +1,74 @@
+.iphone-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-wrap: nowrap;
+  background-color: #333;
+}
+
+.cameraTopLeftRounded {
+  border-top-left-radius: 20px;
+}
+.cameraTopRightRounded {
+  border-top-right-radius: 20px;
+}
+.cameraBottomLeftRounded {
+  border-bottom-left-radius: 20px;
+}
+.cameraBottomRightRounded {
+  border-bottom-right-radius: 20px;
+}
+
+.video-grid {
+  display: grid;
+  margin-top: 8px;
+  background-color: #333;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  flex-grow: 1;
+  padding: 12px;
+}
+
+video,
+#camera .video-container {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  background-color: #ffffffd2;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  padding-bottom: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.button {
+  border: none;
+  padding: 16px 16px 16px 16px;
+  margin: 8px 0px 4px 0px;
+  font-size: 32px;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px 1px;
+  cursor: pointer;
+  font-weight: bold;
+  font-display: center;
+}
+
+.settings {
+  background-color: #52283e;
+}
+
+.screenshot {
+  background-color: #822929;
+}
+
+.exit {
+  background-color: #52283e;
+}
