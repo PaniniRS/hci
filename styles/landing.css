@@ -59,10 +59,16 @@ h3 {
 }
 
 .moments {
-  overflow: hidden;
   width: 360px;
   height: 180px;
   flex-shrink: 0;
+
+  overflow: hidden;
+
+  display: flex;
+  padding-left: 8px;
+  align-items: center;
+  gap: 6px;
 }
 
 .bottom {
@@ -130,6 +136,24 @@ h3 {
   background-image: url(../assets/card.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+
+h4 {
+  padding: 0;
+  margin: 0;
+}
+#momentsCard {
+  overflow: hidden;
+
+  background-image: none;
+  width: 80px;
+  height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 #addCard {
