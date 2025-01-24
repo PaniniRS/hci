@@ -31,6 +31,56 @@
         align-items: center;
         flex-direction: column;
       }
+
+      #top {
+        opacity: 0;
+        animation-delay: 10s;
+        animation-duration: 3s;
+        animation-name: popin;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      .bottomAvatar {
+        animation-delay: 9s;
+        animation-duration: 2s;
+        animation-name: bubbleUp;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+      .bottomAvatar1 {
+        animation-delay: 8s;
+        animation-duration: 1.8s;
+        animation-name: bubbleUp;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes bubbleUp {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        85% {
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(-500px);
+          opacity: 0;
+        }
+      }
+
+      @keyframes popin {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
     </style>
   </head>
   <body>
@@ -259,7 +309,7 @@
           </div>
         </div>
         <div id="middle">
-          <h3>Waiting...</h3>
+          <h3 class="label">Waiting...</h3>
           <div id="timer">
             <h3 class="timerElementMin">00</h3>
             <h3>:</h3>
@@ -268,7 +318,7 @@
         </div>
         <div id="bot">
           <div
-            class="avatarCircle"
+            class="avatarCircle bottomAvatar1"
             style="position: absolute; top: 666px; left: 202px"
           >
             <svg
@@ -417,7 +467,7 @@
             </svg>
           </div>
           <div
-            class="avatarCircle"
+            class="avatarCircle bottomAvatar"
             style="position: absolute; top: 516px; left: 259px"
           >
             <svg
@@ -566,7 +616,7 @@
             </svg>
           </div>
           <div
-            class="avatarCircle"
+            class="avatarCircle bottomAvatar"
             style="position: absolute; top: 573px; left: 16px"
           >
             <svg
@@ -726,10 +776,11 @@
     const timerElement = document.getElementById("bot");
     const timerElementMin = document.querySelector(".timerElementMin");
     const timerElementSec = document.querySelector(".timerElementSec");
+    const label = document.querySelector(".label");
 
     let time = 0;
     let interval;
-    const timeCountdownInSeconds = 30;
+    const timeCountdownInSeconds = 20;
 
     //    countdown timer from timeCountdownInMinutes to 0
     function startTimer() {
@@ -740,6 +791,10 @@
 
         timerElementMin.textContent = minutes < 10 ? `0${minutes}` : minutes;
         timerElementSec.textContent = seconds < 10 ? `0${seconds}` : seconds;
+
+        if (time === 10) {
+          label.textContent = "Joining...";
+        }
 
         time--;
 
