@@ -1,4 +1,6 @@
 const addAvatarCard = document.querySelector("#addCard");
+const momentsContainer = document.querySelector(".moments");
+const membersContainer = document.querySelector(".members");
 const settingsButton = document.querySelector(".settings");
 
 const CARDMAX = 4;
@@ -94,4 +96,42 @@ settingsButton.addEventListener("click", () => {
   );
 
   window.location.href = "../settings.html";
+});
+
+momentsContainer.addEventListener("click", () => {
+  momentsContainer.animate(
+    [
+      { transform: "scale(1)" },
+      { transform: "scale(0.9)" },
+      { transform: "scale(1)" },
+    ],
+    {
+      duration: 70,
+      easing: "ease-in-out",
+      iterations: 1,
+    }
+  );
+
+  window.location.href = "../moments.html";
+});
+
+membersContainer.addEventListener("click", (event) => {
+  // make it so clicking the addCard doesnt change pages
+  if (event.target.id == "addCard") {
+    return;
+  }
+  membersContainer.animate(
+    [
+      { transform: "scale(1)" },
+      { transform: "scale(0.9)" },
+      { transform: "scale(1)" },
+    ],
+    {
+      duration: 70,
+      easing: "ease-in-out",
+      iterations: 1,
+    }
+  );
+
+  window.location.href = "../members.html";
 });
