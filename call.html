@@ -6,6 +6,9 @@
     <title>Video Call Template</title>
     <link rel="stylesheet" href="styles/iphone.css" />
     <link rel="stylesheet" href="styles/call.css" />
+    <link rel="stylesheet" href="styles/menuList.css" />
+    <script src="scripts/videoAccess.js" defer></script>
+    <script src="scripts/call.js" defer></script>
   </head>
   <body>
     <div class="iphone-screen">
@@ -21,7 +24,7 @@
         <div class="video-container">
           <video
             class="cameraTopRightRounded"
-            src="https://videos.pexels.com/video-files/4099020/4099020-uhd_2732_1440_25fps.mp4"
+            src="./assets/videoWoman1.mp4"
             autoplay
             loop
             constrolsList="nodownload nofullscreen noremoteplayback disablepictureinpicture"
@@ -31,7 +34,7 @@
         <div class="video-container">
           <video
             class="cameraBottomLeftRounded"
-            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            src="./assets/videoMan1.mp4"
             autoplay
             constrolsList="nodownload nofullscreen noremoteplayback disablepictureinpicture"
             loop
@@ -50,8 +53,14 @@
         </div>
       </div>
 
+      <div class="menu-list">
+        <button class="menu-list-button" id="menuSettings">Settings</button>
+        <button class="menu-list-button" id="momentsSettings">Moments</button>
+        <button class="menu-list-button" id="pokeSettings">Poke</button>
+      </div>
+
       <div class="controls">
-        <button class="button settings">
+        <button class="button menu">
           <img
             width="32"
             height="32"
@@ -77,51 +86,5 @@
         </button>
       </div>
     </div>
-    <script>
-      async function accessCamera() {
-        try {
-          const videoElement = document.getElementById("camera");
-
-          // Request access to the camera
-          const stream = await navigator.mediaDevices.getUserMedia({
-            video: true,
-            audio: false,
-          });
-
-          // Stream the video to the video element
-          videoElement.srcObject = stream;
-        } catch (error) {
-          console.error("Error accessing the camera:", error);
-          alert("Unable to access the camera. Please check your permissions.");
-        }
-      }
-
-      function takeScreenshot() {
-        const video = document.getElementById("camera");
-        const canvas = document.createElement("canvas");
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        const context = canvas.getContext("2d");
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-        // Convert canvas to a downloadable image
-        const link = document.createElement("a");
-        link.href = canvas.toDataURL("image/png");
-        link.download = "screenshot.png";
-        link.click();
-      }
-
-      document
-        .querySelector(".screenshot")
-        .addEventListener("click", takeScreenshot);
-      document.querySelector(".exit").addEventListener("click", () => {
-        if (confirm("Are you sure you want to exit the call?")) {
-          window.close();
-        }
-      });
-
-      // Start accessing the camera
-      window.addEventListener("load", accessCamera);
-    </script>
   </body>
 </html>
