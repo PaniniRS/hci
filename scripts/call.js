@@ -2,12 +2,26 @@ const menuButton = document.querySelector(".menu");
 const screenshotButton = document.querySelector(".screenshot");
 const exitButton = document.querySelector(".exit");
 const menuList = document.querySelector(".menu-list");
+const menuButtonPoke = document.querySelector("#pokeSettings");
+const menuButtonMoments = document.querySelector("#momentsSettings");
+const menuButtonSettings = document.querySelector("#menuSettings");
 
 const buttons = document.querySelectorAll(".button");
+let isMenuOpen = false;
 
 menuButton.addEventListener("click", (e) => {
   clickButton(menuButton);
-  menuList.classList.toggle("hidden");
+  menuList.classList.toggle("slide-in");
+  menuList.classList.toggle("slide-out");
+  if (isMenuOpen) {
+    setTimeout(() => {
+      menuList.classList.toggle("hidden");
+    }, 800);
+    isMenuOpen = false;
+  } else {
+    menuList.classList.toggle("hidden");
+    isMenuOpen = true;
+  }
 });
 
 exitButton.addEventListener("click", (e) => {
