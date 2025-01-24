@@ -7,6 +7,10 @@
   background-color: #606060;
 }
 
+.hidden {
+  display: none;
+  opacity: 0;
+}
 .cameraTopLeftRounded {
   border-top-left-radius: 20px;
 }
@@ -62,13 +66,29 @@ video,
 }
 
 .settings {
-  background-color: #52283e;
+  background-color: #ffffff;
 }
 
 .screenshot {
-  background-color: #822929;
+  padding: 22px 22px 22px 22px;
+  background-color: #fab400;
 }
 
 .exit {
-  background-color: #52283e;
+  background-color: #ffffff;
+}
+.clicked {
+  animation: click 0.5s;
+}
+
+@keyframes click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
