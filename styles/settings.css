@@ -1,3 +1,69 @@
 .iphone-screen {
   background-color: #262425;
 }
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.top-header {
+  position: relative;
+  left: -4px;
+  padding-top: 20px;
+  background-color: #e8d6cb;
+  width: 400px;
+  height: 150px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #0e0308;
+  line-height: normal;
+  margin-bottom: 5%;
+}
+
+.btn,
+input {
+  border: none;
+  padding: 16px 16px 16px 16px;
+  margin: 8px 0px 4px 0px;
+  font-size: 16px;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px 1px;
+  cursor: pointer;
+  font-weight: bold;
+  font-display: center;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 10%;
+}
+
+.settingsItem {
+  padding-left: 24px;
+  padding-right: 24px;
+  display: grid;
+
+  grid-template-columns: 30% 60%;
+  grid-template-rows: 72px;
+
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
