@@ -53,7 +53,8 @@ exitButton.addEventListener("click", (e) => {
   confirmButton.style.marginRight = "1rem";
   confirmButton.addEventListener("click", () => {
     clickButton(confirmButton);
-    window.location.href = "../landing.html";
+    // window.location.href = "../landing.html";
+    window.location.href = "https://paninirs.github.io/hci/landing.html";
   });
   confirmationModal.appendChild(confirmButton);
 
@@ -104,12 +105,12 @@ menuButtonPoke.addEventListener("click", (e) => {
 
 menuButtonMoments.addEventListener("click", (e) => {
   clickButton(menuButtonMoments);
-  window.location.href = "../moments.html";
+  window.location.href = "https://paninirs.github.io/hci/moments.html";
 });
 
 menuButtonSettings.addEventListener("click", (e) => {
   clickButton(menuButtonSettings);
-  window.location.href = "../settings.html";
+  window.location.href = "https://paninirs.github.io/hci/settings.html";
 });
 
 //////////////////

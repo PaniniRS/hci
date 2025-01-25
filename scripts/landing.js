@@ -95,7 +95,7 @@ settingsButton.addEventListener("click", () => {
     }
   );
 
-  window.location.href = "../settings.html";
+  window.location.href = "https://paninirs.github.io/hci/settings.html";
 });
 
 momentsContainer.addEventListener("click", () => {
@@ -112,7 +112,7 @@ momentsContainer.addEventListener("click", () => {
     }
   );
 
-  window.location.href = "../moments.html";
+  window.location.href = "https://paninirs.github.io/hci/moments.html";
 });
 
 membersContainer.addEventListener("click", (event) => {
@@ -133,5 +133,5 @@ membersContainer.addEventListener("click", (event) => {
     }
   );
 
-  window.location.href = "../members.html";
+  window.location.href = "https://paninirs.github.io/hci/members.html";
 });

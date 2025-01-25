@@ -46,7 +46,7 @@ function startTimer() {
     if (time < 0) {
       clearInterval(timer);
       alert("timers up"); //TODO: Change this to an notif alert
-      window.location.href = "../index.html";
+      window.location.href = "https://paninirs.github.io/hci/";
     }
     if (time <= 60) {
       if (modalResponse === false) {
