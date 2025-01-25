@@ -1,3 +1,71 @@
 .iphone-screen {
   background-color: #262425;
 }
+
+.top-header {
+  position: relative;
+
+  left: -4px;
+  padding-top: 20px;
+
+  background-color: #e8d6cb;
+  width: 400px;
+  height: 150px;
+  flex-shrink: 0;
+
+  border-radius: 16px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+
+  font-size: 32px;
+  font-weight: bold;
+  color: #0e0308;
+  line-height: normal;
+
+  margin-bottom: 5%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 2px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 78%;
+}
+
+.memberCard {
+  display: grid;
+  grid-template-columns: 70% 25%;
+  grid-template-rows: 64px;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  height: 64px;
+  width: 96%;
+  background-color: #d9d9d9;
+}
+
+img {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  border: 1px solid #0e0308;
+}
+
+.memberCard span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0e0308;
+  padding-left: 8%;
+}
