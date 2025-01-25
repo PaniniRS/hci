@@ -9,7 +9,6 @@ const menuButtonSettings = document.querySelector("#menuSettings");
 // disable selection on document
 document.addEventListener("selectstart", (e) => e.preventDefault());
 
-const buttons = document.querySelectorAll(".button");
 let isMenuOpen = false;
 
 menuButton.addEventListener("click", (e) => {
@@ -24,7 +23,7 @@ exitButton.addEventListener("click", (e) => {
   const confirmationModal = document.createElement("div");
   confirmationModal.classList.add("confirmation-modal");
   confirmationModal.style.position = "fixed";
-  confirmationModal.style.width = "10%";
+  confirmationModal.style.width = "240px";
   confirmationModal.style.top = "50%";
   confirmationModal.style.left = "50%";
   confirmationModal.style.transform = "translate(-50%, -50%)";
@@ -99,21 +98,6 @@ menuButtonSettings.addEventListener("click", (e) => {
 });
 
 //////////////////
-
-const clickButton = (button) => {
-  button.animate(
-    [
-      { transform: "scale(1)" },
-      { transform: "scale(1.1)" },
-      { transform: "scale(1)" },
-    ],
-    {
-      duration: 180,
-      iterations: 1,
-    }
-  );
-};
-
 const screenshotAnimation = () => {
   // Create the flash element
   const flash = document.createElement("div");
@@ -145,6 +129,20 @@ const screenshotAnimation = () => {
 };
 
 //////////////////////
+
+const clickButton = (button) => {
+  button.animate(
+    [
+      { transform: "scale(1)" },
+      { transform: "scale(1.1)" },
+      { transform: "scale(1)" },
+    ],
+    {
+      duration: 180,
+      iterations: 1,
+    }
+  );
+};
 
 const captureArea = document.querySelector(".iphone-screen");
 function screenshot() {

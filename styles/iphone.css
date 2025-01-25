@@ -38,10 +38,15 @@ body {
 .notch {
   width: 90px;
   height: 30px;
+  z-index: 999;
   background-color: #000000;
   border-radius: 15px;
   position: absolute;
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.hidden {
+  display: none;
 }

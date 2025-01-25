@@ -1,0 +1,105 @@
+.iphone-screen {
+  background-color: #262425;
+}
+
+.blur {
+  position: absolute;
+  filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.top-header {
+  position: relative;
+
+  left: -4px;
+  padding-top: 20px;
+
+  background-color: #e8d6cb;
+  width: 400px;
+  height: 150px;
+  flex-shrink: 0;
+
+  border-radius: 16px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+
+  font-size: 32px;
+  font-weight: bold;
+  color: #0e0308;
+  line-height: normal;
+
+  margin-bottom: 5%;
+}
+
+.card {
+  width: 124px;
+  height: 216px;
+  flex-shrink: 0;
+  border-radius: 8px;
+
+  border: solid 2px #d9d9d9;
+  /* fill bg with picture from assets */
+  background-color: #d9d9d9;
+  background-image: url(../assets/card.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+img {
+  width: 160px;
+  height: 270px;
+}
+
+h4 {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+#momentsCard {
+  overflow: hidden;
+
+  background-image: none;
+  width: 160px;
+  height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.card-focus {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  /* enable scrolling */
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+
+  width: 100%;
+  height: 78%;
+}
