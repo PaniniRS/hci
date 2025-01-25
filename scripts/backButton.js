@@ -4,7 +4,8 @@ const backButton = document.querySelector(".backButton");
 
 backButton.addEventListener("click", () => {
   clickButton(backButton);
-  window.location.href = "../landing.html";
+  // go back
+  window.history.back();
 });
 
 const clickButton = (button) => {

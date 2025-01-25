@@ -23,31 +23,46 @@ exitButton.addEventListener("click", (e) => {
   const confirmationModal = document.createElement("div");
   confirmationModal.classList.add("confirmation-modal");
   confirmationModal.style.position = "fixed";
+  confirmationModal.style.display = "flex";
+  confirmationModal.style.flexDirection = "row";
+  confirmationModal.style.justifyContent = "space-between";
+  confirmationModal.style.alignItems = "center";
+  confirmationModal.style.alignContent = "center";
+  confirmationModal.style.flexWrap = "wrap";
+
   confirmationModal.style.width = "240px";
   confirmationModal.style.top = "50%";
   confirmationModal.style.left = "50%";
   confirmationModal.style.transform = "translate(-50%, -50%)";
-  confirmationModal.style.backgroundColor = "#D9D9D9a3";
+  confirmationModal.style.backgroundColor = "#D9D9D9";
+  confirmationModal.style.opacity = "0.9";
   confirmationModal.style.padding = "8px";
   confirmationModal.style.borderRadius = "16px";
-  confirmationModal.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.5)";
+  confirmationModal.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.3)";
   confirmationModal.style.zIndex = "10000";
 
   const confirmationText = document.createElement("p");
+  confirmationText.alignContent = "center";
   confirmationText.textContent = "Are you sure you want to leave the call?";
   confirmationModal.appendChild(confirmationText);
 
   const confirmButton = document.createElement("button");
+  confirmButton.classList.add("button");
   confirmButton.textContent = "Yes";
+  confirmButton.style.backgroundColor = "rgba(0, 255, 0, 0.8)";
   confirmButton.style.marginRight = "1rem";
   confirmButton.addEventListener("click", () => {
+    clickButton(confirmButton);
     window.location.href = "../landing.html";
   });
   confirmationModal.appendChild(confirmButton);
 
   const cancelButton = document.createElement("button");
+  cancelButton.classList.add("button");
+  cancelButton.style.backgroundColor = "rgba(255,0, 0, 0.8)";
   cancelButton.textContent = "No";
   cancelButton.addEventListener("click", () => {
+    clickButton(cancelButton);
     confirmationModal.remove();
   });
   confirmationModal.appendChild(cancelButton);
