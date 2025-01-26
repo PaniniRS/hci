@@ -1,4 +1,3 @@
-const cards = document.querySelectorAll(".card");
 const iphone = document.querySelector(".iphone-screen");
 const blurElement = document.querySelector(".blur");
 const container = document.querySelector(".container");
@@ -24,12 +23,21 @@ for (let i = 0; i < CARDMAX; i++) {
   card.classList.add("card");
   card.id = `momentsCard`;
   card.innerHTML = `<img src="${images[0]}" alt="moments" />
-          <h4>${day < 10 ? "0" + day : day}/${
-    month < 10 ? "0" + month : month
-  }/${year < 10 ? "0" + year : year}</h4>`;
+  <h4>${day < 10 ? "0" + day : day}/${month < 10 ? "0" + month : month}/${
+    year < 10 ? "0" + year : year
+  }</h4>`;
 
   container.appendChild(card);
 }
+
+const cards = document.querySelectorAll(".card");
+cards.forEach((element) => {
+  element.addEventListener("click", (e) => {
+    if (!blurToggle) {
+      focusOnClick(element);
+    }
+  });
+});
 
 /////
 /////
@@ -71,12 +79,4 @@ defocusOnClick = (card) => {
 blurElement.addEventListener("click", () => {
   const focusedCard = document.querySelector(".card-focus");
   defocusOnClick(focusedCard);
-});
-
-cards.forEach((element) => {
-  element.addEventListener("click", (e) => {
-    if (!blurToggle) {
-      focusOnClick(element);
-    }
-  });
 });
