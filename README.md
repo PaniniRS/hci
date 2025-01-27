@@ -6,13 +6,17 @@
 - It was not built as a webapp or a separate app so when we open it from mobile the site adds a scroll bar.
 - It was not possible to incorporate companion accessories such as a bracelet that notifies you when a call happens.
 
+---
+
 ### Installation:
 
 1. Download the codebase
-2. Open it through: \\n
-   2.1. Live server extension in vscode \\n
-   2.2. By opening index.html in the browser \\n
+2. Open it through:
+   1. Live server extension in vscode
+   2. By opening index.html in the browser
 3. The page should open up now.
+
+---
 
 ### Operating Instructions:
 
@@ -31,10 +35,12 @@
   - Go to Memories
   - Go to Members
     a) Going to Members: - A list of all family members is displayed
-    a) Going to Memories: - A grid list of all saved memories appears
-    a) Going to Settings: - Fields for changing the username and a field displaying our braceletsID is shown.
+    b) Going to Memories: - A grid list of all saved memories appears
+    c) Going to Settings: - Fields for changing the username and a field displaying our braceletsID is shown.
+
+---
 
 ### Other deliverables connected to project:
 
-**Hosted Page**: [onlyfam.vercel.app] \\n
-**Project Video**: \\n
+**Hosted Page**: [OnlyOnce](onlyfam.vercel.app)  
+**Project Video**: [Project Video]()
