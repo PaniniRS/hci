@@ -9,9 +9,9 @@
 ### Installation:
 
 1. Download the codebase
-2. Open it through:
-   2.1. Live server extension in vscode
-   2.2. By opening index.html in the browser
+2. Open it through: \\n
+   2.1. Live server extension in vscode \\n
+   2.2. By opening index.html in the browser \\n
 3. The page should open up now.
 
 ### Operating Instructions:
@@ -36,5 +36,5 @@
 
 ### Other deliverables connected to project:
 
-**Hosted Page**: onlyfam.vercel.app
-**Project Video**:
+**Hosted Page**: [onlyfam.vercel.app] \\n
+**Project Video**: \\n
