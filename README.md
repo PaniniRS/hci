@@ -42,5 +42,5 @@
 
 ### Other deliverables connected to project:
 
-**Hosted Page**: [OnlyOnce](onlyfam.vercel.app)  
-**Project Video**: [Project Video]()
+**Hosted Page**: [OnlyOnce](https://onlyfam.vercel.app)  
+**Project Video**: [Project Video](https://youtube.com)
