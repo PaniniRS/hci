@@ -33,3 +33,8 @@
     a) Going to Members: - A list of all family members is displayed
     a) Going to Memories: - A grid list of all saved memories appears
     a) Going to Settings: - Fields for changing the username and a field displaying our braceletsID is shown.
+
+### Other deliverables connected to project:
+
+**Hosted Page**: onlyfam.vercel.app
+**Project Video**:
