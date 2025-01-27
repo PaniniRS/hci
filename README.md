@@ -43,4 +43,14 @@
 ### Other deliverables connected to project:
 
 **Hosted Page**: [OnlyOnce](https://onlyfam.vercel.app)  
-**Project Video**: [Project Video](https://youtube.com)
+**Project Video**: [Project Video](https://youtube.com/shorts/FiZQ3ERDkr8)
+
+
+---
+
+
+### Additional resources used:
+
+- Stock Images from (Google)[https://google.com]
+- Videos from (Pexels)[https://www.pexels.com/videos/]
+- Music from (Pixabay)[https://pixabay.com/music]
