@@ -709,7 +709,7 @@
 
     let time = 0;
     let interval;
-    const timeCountdownInSeconds = 20;
+    const timeCountdownInSeconds = 60;
 
     //    countdown timer from timeCountdownInMinutes to 0
     function startTimer() {
@@ -721,8 +721,11 @@
         timerElementMin.textContent = minutes < 10 ? `0${minutes}` : minutes;
         timerElementSec.textContent = seconds < 10 ? `0${seconds}` : seconds;
 
-        if (time === 10) {
+        if (time === 52) {
           label.textContent = "Joining...";
+          setInterval(() => {
+            window.location.href = "./call.html";
+          }, 1500);
         }
 
         time--;
