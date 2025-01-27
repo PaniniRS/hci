@@ -11,7 +11,10 @@ const CARDMAX = randomInt(30) + 1;
 let blurToggle = false;
 
 const dates = ["23/02/23"];
-const images = ["./assets/moments.png"];
+const images = [
+  "../assets/moments/moment1.PNG",
+  "../assets/moments/moment2.png",
+];
 
 //////////////
 
@@ -22,13 +25,33 @@ for (let i = 0; i < CARDMAX; i++) {
   const year = randomInt(24);
   card.classList.add("card");
   card.id = `momentsCard`;
-  card.innerHTML = `<img src="${images[0]}" alt="moments" />
+  card.innerHTML = `<img src="${
+    images[randomInt(images.length)]
+  }" alt="moments" />
   <h4>${day < 10 ? "0" + day : day}/${month < 10 ? "0" + month : month}/${
     year < 10 ? "0" + year : year
   }</h4>`;
 
   container.appendChild(card);
 }
+
+const parseDate = (dateString) => {
+  const [day, month, year] = dateString.split("/").map(Number);
+  return new Date(year + 2000, month - 1, day);
+};
+
+const sortCardsByDate = () => {
+  const cardsArray = Array.from(container.children);
+  cardsArray.sort((a, b) => {
+    const dateA = parseDate(a.querySelector("h4").innerText);
+    const dateB = parseDate(b.querySelector("h4").innerText);
+    return dateA - dateB;
+  });
+
+  cardsArray.forEach((card) => container.appendChild(card));
+};
+
+sortCardsByDate();
 
 const cards = document.querySelectorAll(".card");
 cards.forEach((element) => {
