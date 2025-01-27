@@ -51,6 +51,6 @@
 
 ### Additional resources used:
 
-- Stock Images from (Google)[https://google.com]
-- Videos from (Pexels)[https://www.pexels.com/videos/]
-- Music from (Pixabay)[https://pixabay.com/music]
+- Stock Images from [Google](https://google.com)
+- Videos from [Pexels](https://www.pexels.com/videos/)
+- Music from [Pixabay](https://pixabay.com/music)
