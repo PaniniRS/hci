@@ -25,7 +25,7 @@
 - Then he gets redirected to the group call interface and the call will firstly last for the duration of the timer in the middle.
 - The user can leave at any time he wants, however if he is still present in the call when the timer is close to ending a prompt appears asking whether to continue the call.
 - During the call the user can poke, capture moment, enter settings or moments section, leave the call.
-  - Poke will ring the group members that havent yet joined or they declined.
+  - Poke will ring the group members that have not yet joined or they declined.
   - Capture moment takes a screenshot of the active video call and saves it in the group moments.
   - Entering settings or moments goes to the respective page.
 - If the user leaves during a call, he gets redirected to the main page of the app.
