@@ -1,4 +1,4 @@
-## Limitations(Tradeoffs between functionality and completeness):
+## Limitations( Tradeoffs between functionality and completeness ):
 
 - Since it is a high fidelity prototype that does not use any databases, we didn't include any photo saving or avatar saving functionalities.
   - This is kind off imitated by randomly generating a list or memories.
