@@ -15,10 +15,6 @@
   flex-wrap: wrap;
 }
 
-h3 {
-  padding-top: 24px;
-}
-
 .top-header {
   position: relative;
 
@@ -37,6 +33,13 @@ h3 {
   font-weight: bold;
   color: #0e0308;
   line-height: normal;
+
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
 }
 
 .button {
