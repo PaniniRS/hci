@@ -1,6 +1,8 @@
 ## Limitations(Tradeoffs between functionality and completeness):
 
 - Since it is a high fidelity prototype that does not use any databases, we didn't include any photo saving or avatar saving functionalities.
+  - This is kind off imitated by randomly generating a list or memories.
+  - While they could be hardcoded this adds uniqueness to those features.
 - It was not built as a webapp or a separate app so when we open it from mobile the site adds a scroll bar.
 - It was not possible to incorporate companion accessories such as a bracelet that notifies you when a call happens.
 
@@ -24,6 +26,10 @@
   - Entering settings or moments goes to the respective page.
 - If the user leaves during a call, he gets redirected to the main page of the app.
 - The main page has the following features:
-  - Settings
+  - Go to Settings
   - Battery indicator for a companion bracelet or accessory
-  -
+  - Go to Memories
+  - Go to Members
+    a) Going to Members: - A list of all family members is displayed
+    a) Going to Memories: - A grid list of all saved memories appears
+    a) Going to Settings: - Fields for changing the username and a field displaying our braceletsID is shown.
