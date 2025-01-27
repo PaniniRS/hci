@@ -116,6 +116,7 @@
 
       setTimeout(() => {
         notification.classList.add("show");
+        navigator.vibrate([1000, 500, 1000, 500, 1000]);
         ringtone.play();
       }, delay);
 
