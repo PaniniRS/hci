@@ -4,11 +4,11 @@ const nameLabel = document.querySelector("#name");
 let username = "Enter your name here";
 
 function randomBraceletId() {
-  braceletIdField.value = Math.floor(Math.random() * 1_000_000_000);
+  braceletIdField.innerHTML = Math.floor(Math.random() * 1_000_000_000);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  braceletIdField.placeholder = randomBraceletId();
+  randomBraceletId();
   nameLabel.placeholder = username;
 });
 
@@ -27,7 +27,21 @@ const clickButtonSubmit = (button) => {
 };
 
 submitButton.addEventListener("click", () => {
+  // regex check the username to make sure it's not empty
+  const nameRegex = /^[a-zA-Z\s]+$/;
+  if (!nameRegex.test(nameLabel.value)) {
+    clickButtonSubmit(submitButton);
+    nameLabel.style.border = "4px solid red";
+    submitButton.innerHTML = "Invalid Name";
+    setTimeout(() => {
+      nameLabel.style.border = "none";
+      submitButton.innerHTML = "Save Changes";
+    }, 1400);
+    return;
+  }
+
   clickButtonSubmit(submitButton);
+
   username = nameLabel.value;
   setTimeout(() => {
     // make a popup appear notifying thta you have successfully submitted the form

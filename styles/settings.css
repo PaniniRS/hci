@@ -7,6 +7,11 @@ label {
   font-weight: bold;
   color: #ffffff;
 }
+
+.btn {
+  background-color: #f7f7f7;
+  color: #262425;
+}
 .top-header {
   position: relative;
   left: -4px;
